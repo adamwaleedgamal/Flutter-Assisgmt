@@ -17,13 +17,15 @@ class Signup extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Text("Signup"),
+        leading: Icon(Icons.menu),
+        actions: [Icon(Icons.settings)],
         centerTitle: true,
       ),
+
       body: Form(
         key: formkey,
           child: Container(
             width: double.infinity,
-
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -56,7 +58,7 @@ class Signup extends StatelessWidget {
                       {
                         return "Enter valid Phone";
                       }
-                      if(signup.length!=11){
+                      if(signup.length < 11){
                         return "Enter 11 num";
                       }
                     },
@@ -117,7 +119,7 @@ class Signup extends StatelessWidget {
                 SizedBox(height: 20,),
                 TextButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
-                }, child: Text("Login",style: TextStyle(color: Colors.cyan,fontSize: 25),))
+                }, child: Text("Alerady have an account  'Login' ",style: TextStyle(color: Colors.cyan,fontSize: 25),))
               ],
             ),
           )

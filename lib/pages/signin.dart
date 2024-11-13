@@ -16,11 +16,13 @@ class Login extends StatelessWidget {
     var p=Provider.of<ProviderLog>(context);
     return Scaffold(
         appBar: AppBar(
-          title: Text("Login"),
+          backgroundColor: Colors.cyan,
+          title: Text("Signup"),
           leading: Icon(Icons.menu),
           actions: [Icon(Icons.settings)],
           centerTitle: true,
         ),
+
         body: Form(
             key: formkey,
             child: Container(
@@ -38,7 +40,6 @@ class Login extends StatelessWidget {
                   ),
                   SizedBox(height: 20,),
                   Container(
-                    
                     width: 300,
                     child: TextFormField(
                       validator: (vaildor){
@@ -63,8 +64,8 @@ class Login extends StatelessWidget {
                         {
                           return "Enter valid Password";
                         }
-
                       },
+
                       controller: password,
                       decoration: InputDecoration(
                           label: Text("Password"),
@@ -73,14 +74,12 @@ class Login extends StatelessWidget {
                     ),
                   ),
 
-
                   SizedBox(height: 35,),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           minimumSize: Size(250, 50)
                       ),
-
                       onPressed: (){
                         if(formkey.currentState!.validate()){
                           if(p.obj==null)
@@ -90,9 +89,7 @@ class Login extends StatelessWidget {
                           else if(p.obj?.userdata==true)
                             {
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
-
                             }
-
                         }
                       }, child: Text("Login",style: TextStyle(color: Colors.white),)),
                   SizedBox(height: 20,),

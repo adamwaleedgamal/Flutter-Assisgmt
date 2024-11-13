@@ -1,9 +1,9 @@
-class user_model
+class Regestraion
 {
   bool userdata;
-  user_model({required this.userdata});
-  factory user_model.fromjson(Map json)
+  Regestraion({required this.userdata});
+  factory Regestraion.fromjson(Map json)
   {
-    return user_model(userdata:json["status"]);
+    return Regestraion(userdata:json["status"]);
   }
 }

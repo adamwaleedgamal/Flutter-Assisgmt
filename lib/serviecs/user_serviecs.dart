@@ -1,7 +1,7 @@
 import 'package:adam_waleed_0522018/models/user_model.dart';
 import 'package:dio/dio.dart';
 
-class user_services
+class Log_services
 {
    static Dio dio=Dio();
    static Future<void> signup(name,phone,email,password)async
@@ -20,7 +20,7 @@ class user_services
        }
    }
 
-   static Future<user_model> login(email,password)async
+   static Future<Regestraion> login(email,password)async
    {
      var res=  await dio.post("https://student.valuxapps.com/api/login",
          data: {
@@ -32,6 +32,6 @@ class user_services
      {
        print(res.data);
      }
-    return user_model.fromjson(res.data);
+    return Regestraion.fromjson(res.data);
    }
 }

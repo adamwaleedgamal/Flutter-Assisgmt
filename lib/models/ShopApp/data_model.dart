@@ -1,9 +1,9 @@
-class data_model
+class Shopapp_model
 {
     List data;
-    data_model({required this.data});
-    factory data_model.fromjson(Map json)
+    Shopapp_model({required this.data});
+    factory Shopapp_model.fromjson(Map json)
     {
-      return data_model(data: json["data"]["products"]);
+      return Shopapp_model(data: json["data"]["products"]);
     }
 }
