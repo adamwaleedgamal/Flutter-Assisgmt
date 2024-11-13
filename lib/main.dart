@@ -1,6 +1,7 @@
 import 'package:adam_waleed_0522018/Providers/loginprovider.dart';
 import 'package:adam_waleed_0522018/Providers/registerprovider.dart';
 import 'package:adam_waleed_0522018/Screens/loginscreen.dart';
+import 'package:adam_waleed_0522018/Screens/registerscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: LoginScreen()
+        home: RegisterScreen()
       ),
     );
   }
