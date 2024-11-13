@@ -11,10 +11,11 @@ class Signup extends StatelessWidget {
   var formkey=GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    var p=Provider.of<myp>(context);
+    var p=Provider.of<ProviderLog>(context);
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.cyan,
         title: Text("Signup"),
         centerTitle: true,
       ),
@@ -22,13 +23,18 @@ class Signup extends StatelessWidget {
         key: formkey,
           child: Container(
             width: double.infinity,
+
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
+
                   width: 300,
+
                   child: TextFormField(
+
                     validator: (signup){
+
                       if(signup==null || signup.isEmpty)
                         {
                           return "Enter valid name";
@@ -49,6 +55,9 @@ class Signup extends StatelessWidget {
                       if(signup==null || signup.isEmpty)
                       {
                         return "Enter valid Phone";
+                      }
+                      if(signup.length!=11){
+                        return "Enter 11 num";
                       }
                     },
                     controller: phone,
@@ -108,7 +117,7 @@ class Signup extends StatelessWidget {
                 SizedBox(height: 20,),
                 TextButton(onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
-                }, child: Text("Login",style: TextStyle(color: Colors.white,fontSize: 25),))
+                }, child: Text("Login",style: TextStyle(color: Colors.cyan,fontSize: 25),))
               ],
             ),
           )

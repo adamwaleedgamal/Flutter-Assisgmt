@@ -1,4 +1,4 @@
-import 'package:adam_waleed_0522018/models/data_model.dart';
+import 'package:adam_waleed_0522018/models/ShopApp/data_model.dart';
 import 'package:dio/dio.dart';
 
 class data_serviecs

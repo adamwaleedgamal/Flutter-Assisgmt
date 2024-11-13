@@ -1,6 +1,6 @@
 import 'package:adam_waleed_0522018/Widget/item.dart';
-import 'package:adam_waleed_0522018/pages/productdet.dart';
-import 'package:adam_waleed_0522018/provider/data_provider.dart';
+import 'package:adam_waleed_0522018/pages/ShopApp/productdet.dart';
+import 'package:adam_waleed_0522018/provider/ShopApp/data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var p=Provider.of<myp2>(context);
+    var p=Provider.of<Providershop>(context);
     p.fech();
     return Scaffold(
       appBar: AppBar(

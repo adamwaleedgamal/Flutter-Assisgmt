@@ -20,8 +20,6 @@ class user_services
        }
    }
 
-
-
    static Future<user_model> login(email,password)async
    {
      var res=  await dio.post("https://student.valuxapps.com/api/login",
