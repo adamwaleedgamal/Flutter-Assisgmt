@@ -24,11 +24,13 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
+                //dd
                 CircleAvatar(
                   radius: 40,
                   child: Image.network("https://student.valuxapps.com/storage/uploads/products/1615440689wYMHV.item_XXL_36330138_142814934.jpeg"),
                 ),
                 //git
+                //adadm
                 SizedBox(height: 20,),
                 CustomTextField(
                     controller: email, text: "Email"),
