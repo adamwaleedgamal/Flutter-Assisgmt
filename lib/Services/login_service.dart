@@ -4,6 +4,7 @@ import '../Models/login_model.dart';
 
 class LoginService{
   static Dio dio = Dio();
+
   static loginData(String email,String password,)async{
    var response = await dio.post("https://student.valuxapps.com/api/login",
     data:{

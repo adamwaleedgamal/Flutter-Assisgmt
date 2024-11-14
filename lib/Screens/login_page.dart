@@ -28,6 +28,7 @@ class LoginPage extends StatelessWidget {
                   radius: 40,
                   child: Image.network("https://student.valuxapps.com/storage/uploads/products/1615440689wYMHV.item_XXL_36330138_142814934.jpeg"),
                 ),
+
                 SizedBox(height: 20,),
                 CustomTextField(
                     controller: email, text: "Email"),
@@ -36,7 +37,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 20,),
                 GestureDetector(
                   onTap: () async{
-                     if(await value.login(email.text, pass.text)){
+                     if(await value.loginModel?.status==true){
                      Navigator.push(context, MaterialPageRoute(builder: (context) => ProductsPage(),));
                      }else{
                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Invalid")));

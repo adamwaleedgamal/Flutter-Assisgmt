@@ -23,8 +23,7 @@ class RegisterPage extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 20,),
-                CustomTextField(
-                    controller: name, text: "Name"),
+                CustomTextField(controller: name, text: "Name"),
                 SizedBox(height: 20,),
                 CustomTextField(controller: email, text: "Email")
                 ,SizedBox(height: 20,),

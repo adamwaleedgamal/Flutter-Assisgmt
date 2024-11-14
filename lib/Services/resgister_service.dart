@@ -13,7 +13,7 @@ class RegisterService{
           "name":name
         }
     );
-    if(response.statusCode! >= 200 && response.statusCode! < 300)
+    if(response.statusCode! == 200 )
     {
       print(response.data);
       return RegisterModel.fromJson (response.data);

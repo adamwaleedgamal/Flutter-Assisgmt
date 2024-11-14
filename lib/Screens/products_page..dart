@@ -14,34 +14,28 @@ class ProductsPage extends StatelessWidget {
       appBar: AppBar(title: Text("Product Details"),centerTitle: true,),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Consumer(builder: (context, ProductsProvider value, child) {
+        child: Consumer(builder:  (context, ProductsProvider value, child) {
           var data = value.productModel?.data;
-          if(data == null){
+          if(data==null){
             value.fetchData();
-            return Center(child: CircularProgressIndicator(),);
-          }else{
+            return CircularProgressIndicator();}
+          else{
             return GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisSpacing: 20,
-                  crossAxisCount: 2),
-               itemCount:data.length ,
-                itemBuilder: (context, index) {
-                  var lol = data[index];
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)
-                          => ProductDetailsPage(image: lol['image'], data: lol['name'], desc: lol['description']),));
-                    },
-                    child: CustomProductItem(
-                        image: lol['image'],
-                        name: lol['name'],
-                        price: lol['price']),
-                  );
-                },
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisSpacing: 20, crossAxisCount: 2),
+              itemCount:data.length ,
+              itemBuilder: (context, index) {
+                var lol = data[index];
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=> ProductDetailsPage(image: lol['image'], data: lol['name'], desc: lol['description']),));
+                  },
+                  child: CustomProductItem(
+                      image: lol['image'], name: lol['name'], price: lol['price']),);
+              },
             );
           }
-        },),
+        },
+        ),
       ),
     );
   }
